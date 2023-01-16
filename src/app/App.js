@@ -1,11 +1,42 @@
-import './App.css';
+import React from 'react';
 
-const App = () => {
+import { Inventory } from '../features/inventory/Inventory.js';
+import { CurrencyFilter } from '../features/currencyFilter/CurrencyFilter.js';
+// Import the Cart component here.
+import { Cart } from '../features/cart/Cart.js';
+
+// Render the Cart component below <Inventory />
+export const App = (props) => {
+
+  const { state, dispatch } = props;
+
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
+    <div>
+
+      
+
+      <CurrencyFilter
+        currencyFilter={state.currencyFilter}
+        dispatch={dispatch}
+      />
+
+      <Inventory
+        inventory={state.inventory}
+        currencyFilter={state.currencyFilter}
+        dispatch={dispatch}
+      />
+
+      < Cart 
+        cart={state.cart}
+        dispatch={dispatch}
+        currencyFilter={state.currencyFilter}
+
+      />
+
+      <p>{JSON.stringify(state.cart)}</p>
+
     </div>
   );
-}
+};
 
 export default App;

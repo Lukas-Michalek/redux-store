@@ -4,6 +4,10 @@ Extra Credit:
     * 'searchTerm/setSearchTerm'
     * 'searchTerm/clearSearchTerm'
     * Don't forget to set the initial state and return state by default!
+*/
+
+
+/*
 
 2. Create a function called setSearchTerm
     * It has one parameter, term
@@ -15,5 +19,4 @@ Extra Credit:
     * See SearchTerm.js for how this will be used.
 
 */
-
 

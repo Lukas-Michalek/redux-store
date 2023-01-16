@@ -5,10 +5,13 @@ import {
 } from '../../utilities/utilities.js';
 
 // Import the changeItemQuantity() action creator.
+import { changeItemQuantity } from '../cart/cartSlice'
 
 export const Cart = (props) => {
   const { cart, currencyFilter, dispatch } = props;
 
+
+  
   const onInputChangeHandler = (name, input) => {
     // If the user enters a bad value...
     if (input === '') {
@@ -19,12 +22,42 @@ export const Cart = (props) => {
     const newQuantity = Number(input);
 
     // Dispatch an action to change the quantity of the given name and quantity.
+    
+    dispatch(changeItemQuantity(name, newQuantity));
 
   };
 
   // Use the cart and currencyFilter slices to render their data.
-  const cartElements = 'REPLACE_ME';
-  const total = 0;
+  
+  const cartElements = [];
+   
+  for (let itemName in cart) {
+    cartElements.push(createCartItem(itemName));
+  }
+
+
+  // TODO => There are two ways to go about this:
+
+  // const cartElements = [];
+   
+  // for (let itemName in cart) {
+  //   cartElements.push(createCartItem(itemName));
+  // }
+ 
+  // or…
+  
+  // const cartElements = Object.keys(cart).map(createCartItem)
+
+  // TODO *******************************************************
+  // TODO *******************************************************
+  // Because Object.keys(cart) => Names of items(see in data.js)
+  // {"Hello World Hat":{"price":23.99,"quantity":1},"Hello World Hoodie":{"price":49.99,"quantity":1}} Where keys are the name of items and map(functionName) will cause to use every item from Object.keys(cart) to be used as argument forthat function
+  // TODO *******************************************************
+  // TODO *******************************************************!
+
+  const total = calculateTotal(cart, currencyFilter)
+
+  
 
   return (
     <div id="cart-container">
@@ -39,6 +72,7 @@ export const Cart = (props) => {
   );
 
   function createCartItem(name) {
+    
     const item = cart[name];
 
     if (item.quantity === 0) {

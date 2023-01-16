@@ -11,17 +11,20 @@ export const addItem = (itemToAdd) => {
 
   //TODO => I start by creating changeItemQuantity ACTION CREATOR. I set its type by defining -> (Slice of state that I am changing / Action that I am taking to change that slice) and then including the PAYLOAD with the data needed to make that update. I then handle that case to REDUCER by grabbing the item that I want to update (itemToUpdate), making a copy of that item -> const updatedItem = { ...itemToUpdate, quantity: newQuantity} and updating that copy and then returning a new state with the new state with a new item included -> return { ...cart, [name]: updatedItem};
 export const changeItemQuantity = (name, newQuantity) => {
-      type: 'cart/changeItemQuantity',
-      payload: {  
-        name, 
-        newQuantity 
-      }     
+      
+  return{ 
+    type: 'cart/changeItemQuantity',
+    payload: {  
+                  name, 
+                  newQuantity 
+             } 
 
       // This is exactly same as writing:
       //   payload: {              
       //                name: name,
       //                newQuantity: newQuantity }
 }
+    }
   
   
   const initialCart = {};
