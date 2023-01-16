@@ -39,4 +39,4 @@ dispatch actions to the store
 
 ## The live version of this project can be seen here:
 
-[Redux Store - Lukas Michalek](https://lukas-michalek.github.io/redux-store/)
+<a href="https://lukas-michalek.github.io/redux-store/" target="_blank">Redux Store - Lukas Michalek</a>
