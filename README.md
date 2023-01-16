@@ -36,3 +36,7 @@ The file structure has been organized using the recommended feature-based patter
  - pass the store resources to presentational components via the top-level `<App />` component
  - render the `<Cart />` component using the current state data
 dispatch actions to the store
+
+## The live version of this project can be seen here:
+
+[Redux Store - Lukas Michalek](https://lukas-michalek.github.io/redux-store/)
