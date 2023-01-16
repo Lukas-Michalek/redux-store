@@ -1,5 +1,5 @@
 import React from 'react';
-import { setSearchTerm, clearSearchTerm } from './searchTermSlice.js';
+import { setSearchTerm, clearSearchTerm } from './searchTermSlice';
 
 const searchIconUrl =
   'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/search.svg';
@@ -28,6 +28,8 @@ export const SearchTerm = (props) => {
         onChange={onSearchTermChangeHandler}
         placeholder="Search products"
       />
+      
+      
       {searchTerm.length > 0 && (
         <button
           onClick={onClearSearchTermHandler}
